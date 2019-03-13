@@ -30,16 +30,22 @@
             </p>
             <p>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
+                    <label class="btn btn-secondary btn-sm active">
                         <input type="radio" name="options" id="option1"
                             autocomplete="off" checked>Encrypt
                     </label>
-                    <label class="btn btn-secondary">
+                    <label class="btn btn-secondary btn-sm">
                         <input type="radio" name="options" id="option2"
                             autocomplete="off"> Decrypt
                     </label>
                 </div>
             </p>
+            <div class="row">
+                <div class="col-12 d-none d-md-block">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vigen%C3%A8re_square_shading.svg"
+                        class="img-fluid" alt="Vigenere Square" />
+                </div>
+            </div>
         </div>
         <div class="col-md-8">
             <form>
@@ -54,16 +60,20 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-4">
-                            <label>Key Method: </label>
+                            <label>Key Method</label>
                         </div>
 
                         <div class="col-8">
                             <div class="form-check form-check-inline" id="KeyMethod">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="repeat">
+                                <input class="form-check-input" type="radio"
+                                    checked="checked" name="inlineRadioOptions"
+                                    id="inlineRadio1" value="repeat">
                                 <label class="form-check-label" for="inlineRadio1">Repeat</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="autokey">
+                                <input class="form-check-input" type="radio"
+                                    name="inlineRadioOptions" id="inlineRadio2"
+                                    value="autokey">
                                 <label class="form-check-label" for="inlineRadio2">Autokey</label>
                             </div>
                         </div>
