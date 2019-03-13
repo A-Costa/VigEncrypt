@@ -8,6 +8,21 @@
 
     }
 }
+
+body {
+    padding-bottom: 70px;
+}
+
+footer {
+    width: 100%;
+    height: 60px;
+    background-color: #f5f5f5;
+    font-size: 12px;
+}
+footer .row {
+    margin-top: 20px;
+}
+
 .header {
     padding-top: 20px;
 }
@@ -21,11 +36,15 @@
     </div>
     <div class="row">
         <div class="col-md-4 border-right info">
-            <p class="text-justify">a<a href=https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher>
+            <p class="text-justify">online<a href=https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher>
                     Vigenere Cipher</a> written using Flask </p> <p>
                     <a class="github-button" href="https://github.com/A-Costa"
                         data-size="large" aria-label="Follow @A-Costa on GitHub">Follow
                         @A-Costa
+                    </a>
+                    <a class="github-button" href="https://github.com/A-Costa/VigEncrypt"
+                        data-icon="octicon-star" data-size="large"
+                        data-show-count="true" aria-label="Star A-Costa/VigEncrypt on GitHub">Star
                     </a>
             </p>
             <p>
@@ -36,7 +55,7 @@
                     </label>
                     <label class="btn btn-secondary btn-sm">
                         <input type="radio" name="options" id="option2"
-                            autocomplete="off"> Decrypt
+                            autocomplete="off">Decrypt
                     </label>
                 </div>
             </p>
@@ -51,11 +70,12 @@
             <form>
                 <div class="form-group">
                     <label for="TextArea1">Plain Text</label>
-                    <textarea class="form-control" id="TextArea1" rows="6"></textarea>
+                    <textarea class="form-control" id="TextArea1" rows="6" name="text_area"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="KeyTextarea">Encryption Key</label>
-                    <input type="text" class="form-control" id="KeyTextarea">
+                    <input type="text" class="form-control" id="KeyTextarea"
+                        name="key">
                 </div>
                 <div class="form-group">
                     <div class="row">
@@ -66,20 +86,20 @@
                         <div class="col-8">
                             <div class="form-check form-check-inline" id="KeyMethod">
                                 <input class="form-check-input" type="radio"
-                                    checked="checked" name="inlineRadioOptions"
-                                    id="inlineRadio1" value="repeat">
+                                    checked="checked" name="keymethodoption" id="inlineRadio1"
+                                    value="repeat">
                                 <label class="form-check-label" for="inlineRadio1">Repeat</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio"
-                                    name="inlineRadioOptions" id="inlineRadio2"
+                                    name="keymethodoption" id="inlineRadio2"
                                     value="autokey">
                                 <label class="form-check-label" for="inlineRadio2">Autokey</label>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary">Encrypt</button>
+                <button type="submit" class="btn btn-primary">Encrypt</button>
                 <hr>
                 <div class="form-group">
                     <label for="TextArea2">Cipher Text</label>
