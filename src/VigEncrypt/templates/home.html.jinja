@@ -9,49 +9,49 @@
     </div>
     <div class="row">
         <div class="col-md-4 border-right info">
-            <p class="text-justify font-italic">online<a href=https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher>
-                    Vigenere Cipher</a> written using Flask
-            </p>
-            <p>
-                <a class="github-button" href="https://github.com/A-Costa"
-                    data-size="large" aria-label="Follow @A-Costa on GitHub">Follow
-                    @A-Costa
-                </a>
-                <a class="github-button" href="https://github.com/A-Costa/VigEncrypt"
-                    data-icon="octicon-star" data-size="large"
-                    data-show-count="true" aria-label="Star A-Costa/VigEncrypt on GitHub">Star
-                </a>
-            </p>
-            <p>
-                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary btn-sm active" id="encrypt_fn_button">
-                        <input type="radio" name="encrypt_or_decrypt"
-                            autocomplete="off" checked>Encrypt
-                    </label>
-                    <label class="btn btn-secondary btn-sm" id="decrypt_fn_button">
-                        <input type="radio" name="encrypt_or_decrypt"
-                            autocomplete="off">Decrypt
-                    </label>
-                </div>
-            </p>
-            <div class="row">
-                <div class="col-12 d-none d-md-block">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vigen%C3%A8re_square_shading.svg"
-                        class="img-fluid" alt="Vigenere Square" />
-                </div>
+            <div>
+                <p class="text-justify font-italic">online<a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher"
+                        target="_blank">
+                        Vigenere Cipher</a> written using Flask
+                </p>
+                <p>
+                    <a class="github-button" href="https://github.com/A-Costa"
+                        data-size="large" aria-label="Follow @A-Costa on GitHub">Follow
+                        @A-Costa
+                    </a>
+                    <a class="github-button" href="https://github.com/A-Costa/VigEncrypt"
+                        data-icon="octicon-star" data-size="large"
+                        data-show-count="true" aria-label="Star A-Costa/VigEncrypt on GitHub">Star
+                    </a>
+                </p>
             </div>
+            <div class="btn-group btn-group-toggle" data-toggle="buttons" id="fn_button_group">
+                <label class="btn btn-secondary btn-sm active" id="encrypt_fn_button">
+                    <input type="radio" name="encrypt_or_decrypt" autocomplete="off"
+                        checked>Encrypt
+                </label>
+                <label class="btn btn-secondary btn-sm" id="decrypt_fn_button">
+                    <input type="radio" name="encrypt_or_decrypt" autocomplete="off">Decrypt
+                </label>
+            </div>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Vigen%C3%A8re_square_shading.svg"
+                class="img-fluid d-none d-md-block" alt="Vigenere Square" />
         </div>
         <div class="col-md-8">
             <form>
-                <input type="hidden" id="vigenere_function" name="function" value="encrypt"/>
+                <input type="hidden" id="vigenere_function" name="function"
+                    value="encrypt" />
                 <div class="form-group">
-                    <label for="vigenere_text_area_1" id="label_vigenere_text_area_1">Plain Text</label>
-                    <textarea class="form-control" id="vigenere_text_area_1" rows="6" name="vigenere_text_area_1"></textarea>
+                    <label for="vigenere_text_area_1" id="label_vigenere_text_area_1">Plain
+                        Text</label>
+                    <textarea class="form-control" id="vigenere_text_area_1"
+                        rows="6" name="vigenere_text_area_1"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="vigenere_key" id="label_vigenere_key">Encryption Key</label>
+                    <label for="vigenere_key" id="label_vigenere_key">Encryption
+                        Key</label>
                     <input type="text" class="form-control" id="vigenere_key"
-                        name="vigenere_key">
+                        name="vigenere_key" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <div class="row" id="vigenere_key_method">
@@ -61,24 +61,27 @@
                         <div class="col-8">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio"
-                                    checked="checked" name="vigenere_key_method" id="vigenere_key_method_repeat"
-                                    value="repeat">
+                                    checked="checked" name="vigenere_key_method"
+                                    id="vigenere_key_method_repeat" value="repeat">
                                 <label class="form-check-label" for="vigenere_key_method_repeat">Repeat</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio"
                                     name="vigenere_key_method" id="vigenere_key_method_autokey"
                                     value="autokey">
-                                <label class="form-check-label" for="inlineRadio2">Autokey</label>
+                                <label class="form-check-label" for="vigenere_key_method_autokey">Autokey</label>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary" id="vigenere_button" onclick="submitFormAjax()">Encrypt</button>
+                <button type="button" class="btn btn-primary" id="vigenere_button"
+                    onclick="submitFormAjax()">Encrypt</button>
                 <hr>
                 <div class="form-group">
-                    <label for="vigenere_text_area_2" id="label_vigenere_text_area_2">Cipher Text</label>
-                    <textarea class="form-control" id="vigenere_text_area_2" rows="6" name="vigenere_text_area_2"></textarea>
+                    <label for="vigenere_text_area_2" id="label_vigenere_text_area_2">Cipher
+                        Text</label>
+                    <textarea class="form-control" id="vigenere_text_area_2"
+                        rows="6" name="vigenere_text_area_2"></textarea>
                 </div>
             </form>
         </div>

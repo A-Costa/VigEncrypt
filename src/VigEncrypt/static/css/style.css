@@ -21,5 +21,9 @@ footer .row {
 }
 
 .header {
-    padding-top: 20px;
+    margin-top: 20px;
+}
+
+#fn_button_group {
+    margin-bottom: 30px;
 }
