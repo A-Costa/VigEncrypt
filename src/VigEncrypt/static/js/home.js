@@ -1,54 +1,58 @@
+var active_function = 'encrypt'
+
 function activate_decrypt() {
-    var label1 = document.querySelector(
-        'body > div > div:nth-child(2) > div.col-md-8 > form > div:nth-child(1) > label')
-    label1.innerHTML = "Cipher Text"
+    var label_vigenere_text_area_1 = document.querySelector('#label_vigenere_text_area_1')
+    var label_vigenere_text_area_2 = document.querySelector('#label_vigenere_text_area_2')
+    var label_vigenere_key = document.querySelector('#label_vigenere_key')
+    var vigenere_button = document.querySelector('#vigenere_button')
+    var vigenere_function = document.querySelector('#vigenere_function')
 
-    var label2 = document.querySelector(
-        'body > div > div:nth-child(2) > div.col-md-8 > form > div:nth-child(2) > label')
-    label2.innerHTML = "Decryption Key"
+    label_vigenere_text_area_1.innerHTML = "Cipher Text"
+    label_vigenere_text_area_2.innerHTML = "Plain Text"
 
-    var button = document.querySelector(
-        'body > div > div:nth-child(2) > div.col-md-8 > form > button')
-    button.innerHTML = "Decrypt"
+    label_vigenere_key.innerHTML = "Decryption Key"
 
-    var label3 = document.querySelector(
-        'body > div > div:nth-child(2) > div.col-md-8 > form > div:nth-child(6) > label')
-    label3.innerHTML = "Plain Text"
+    vigenere_button.innerHTML = "Decrypt"
+    vigenere_function.value = "decrypt"
 
-    swap_text_area()
+    if(active_function == 'encrypt'){
+        swap_text_area()
+    }
+    active_function = 'decrypt'
 }
 
 function activate_encrypt() {
-    var label1 = document.querySelector(
-        'body > div > div:nth-child(2) > div.col-md-8 > form > div:nth-child(1) > label')
-    label1.innerHTML = "Plain Text"
+    var label_vigenere_text_area_1 = document.querySelector('#label_vigenere_text_area_1')
+    var label_vigenere_text_area_2 = document.querySelector('#label_vigenere_text_area_2')
+    var label_vigenere_key = document.querySelector('#label_vigenere_key')
+    var vigenere_button = document.querySelector('#vigenere_button')
+    var vigenere_function = document.querySelector('#vigenere_function')
 
-    var label2 = document.querySelector(
-        'body > div > div:nth-child(2) > div.col-md-8 > form > div:nth-child(2) > label')
-    label2.innerHTML = "Encryption Key"
+    label_vigenere_text_area_1.innerHTML = "Plain Text"
+    label_vigenere_text_area_2.innerHTML = "Cipher Text"
 
-    var button = document.querySelector(
-        'body > div > div:nth-child(2) > div.col-md-8 > form > button')
-    button.innerHTML = "Encrypt"
+    label_vigenere_key.innerHTML = "Encryption Key"
 
-    var label3 = document.querySelector(
-        'body > div > div:nth-child(2) > div.col-md-8 > form > div:nth-child(6) > label')
-    label3.innerHTML = "Cipher Text"
+    vigenere_button.innerHTML = "Encrypt"
+    vigenere_function.value = "encrypt"
 
-    swap_text_area()
+    if(active_function == 'decrypt'){
+        swap_text_area()
+    }
+    active_function = 'encrypt'
 }
 
 function swap_text_area() {
-    var text_area_1 = document.querySelector('#TextArea1')
-    var text_area_2 = document.querySelector('#TextArea2')
+    var vigenere_text_area_1 = document.querySelector('#vigenere_text_area_1')
+    var vigenere_text_area_2 = document.querySelector('#vigenere_text_area_2')
 
-    var temp = text_area_2.value
-    text_area_2.value = text_area_1.value
-    text_area_1.value = temp
+    var temp = vigenere_text_area_2.value
+    vigenere_text_area_2.value = vigenere_text_area_1.value
+    vigenere_text_area_1.value = temp
 }
 
 function capitalize_key() {
-    var key = document.querySelector('#KeyTextarea')
+    var key = document.querySelector('#vigenere_key')
 
     text = key.value
     text = text.replace(/\s/g, '').replace(/[^a-zA-Z ]/g, '')
@@ -58,12 +62,10 @@ function capitalize_key() {
 
 
 
-document.querySelector(
-    'body > div > div:nth-child(2) > div.col-md-4.border-right.info > div > label:nth-child(2)'
-).addEventListener("click", activate_decrypt)
-document.querySelector(
-    'body > div > div:nth-child(2) > div.col-md-4.border-right.info > div > label.btn.btn-secondary.active'
-).addEventListener("click", activate_encrypt)
+document.querySelector('#encrypt_fn_button')
+        .addEventListener("click", activate_encrypt)
+document.querySelector('#decrypt_fn_button')
+        .addEventListener("click", activate_decrypt)
 
-document.querySelector('#KeyTextarea').addEventListener("keyup", capitalize_key)
-document.querySelector('#KeyTextarea').addEventListener("keydown", capitalize_key)
+document.querySelector('#vigenere_key').addEventListener("keyup", capitalize_key)
+document.querySelector('#vigenere_key').addEventListener("keydown", capitalize_key)

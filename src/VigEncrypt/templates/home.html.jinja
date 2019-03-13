@@ -9,25 +9,27 @@
     </div>
     <div class="row">
         <div class="col-md-4 border-right info">
-            <p class="text-justify">online<a href=https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher>
-                    Vigenere Cipher</a> written using Flask </p> <p>
-                    <a class="github-button" href="https://github.com/A-Costa"
-                        data-size="large" aria-label="Follow @A-Costa on GitHub">Follow
-                        @A-Costa
-                    </a>
-                    <a class="github-button" href="https://github.com/A-Costa/VigEncrypt"
-                        data-icon="octicon-star" data-size="large"
-                        data-show-count="true" aria-label="Star A-Costa/VigEncrypt on GitHub">Star
-                    </a>
+            <p class="text-justify font-italic">online<a href=https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher>
+                    Vigenere Cipher</a> written using Flask
+            </p>
+            <p>
+                <a class="github-button" href="https://github.com/A-Costa"
+                    data-size="large" aria-label="Follow @A-Costa on GitHub">Follow
+                    @A-Costa
+                </a>
+                <a class="github-button" href="https://github.com/A-Costa/VigEncrypt"
+                    data-icon="octicon-star" data-size="large"
+                    data-show-count="true" aria-label="Star A-Costa/VigEncrypt on GitHub">Star
+                </a>
             </p>
             <p>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary btn-sm active">
-                        <input type="radio" name="options" id="option1"
+                    <label class="btn btn-secondary btn-sm active" id="encrypt_fn_button">
+                        <input type="radio" name="encrypt_or_decrypt"
                             autocomplete="off" checked>Encrypt
                     </label>
-                    <label class="btn btn-secondary btn-sm">
-                        <input type="radio" name="options" id="option2"
+                    <label class="btn btn-secondary btn-sm" id="decrypt_fn_button">
+                        <input type="radio" name="encrypt_or_decrypt"
                             autocomplete="off">Decrypt
                     </label>
                 </div>
@@ -41,42 +43,42 @@
         </div>
         <div class="col-md-8">
             <form>
+                <input type="hidden" id="vigenere_function" name="function" value="encrypt"/>
                 <div class="form-group">
-                    <label for="TextArea1">Plain Text</label>
-                    <textarea class="form-control" id="TextArea1" rows="6" name="text_area"></textarea>
+                    <label for="vigenere_text_area_1" id="label_vigenere_text_area_1">Plain Text</label>
+                    <textarea class="form-control" id="vigenere_text_area_1" rows="6" name="vigenere_text_area_1"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="KeyTextarea">Encryption Key</label>
-                    <input type="text" class="form-control" id="KeyTextarea"
-                        name="key">
+                    <label for="vigenere_key" id="label_vigenere_key">Encryption Key</label>
+                    <input type="text" class="form-control" id="vigenere_key"
+                        name="vigenere_key">
                 </div>
                 <div class="form-group">
                     <div class="row">
                         <div class="col-4">
                             <label>Key Method</label>
                         </div>
-
                         <div class="col-8">
-                            <div class="form-check form-check-inline" id="KeyMethod">
+                            <div class="form-check form-check-inline" id="vigenere_key_method">
                                 <input class="form-check-input" type="radio"
-                                    checked="checked" name="keymethodoption" id="inlineRadio1"
+                                    checked="checked" name="vigenere_key_method" id="vigenere_key_method_repeat"
                                     value="repeat">
-                                <label class="form-check-label" for="inlineRadio1">Repeat</label>
+                                <label class="form-check-label" for="vigenere_key_method_repeat">Repeat</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio"
-                                    name="keymethodoption" id="inlineRadio2"
+                                    name="vigenere_key_method" id="vigenere_key_method_autokey"
                                     value="autokey">
                                 <label class="form-check-label" for="inlineRadio2">Autokey</label>
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Encrypt</button>
+                <button type="submit" class="btn btn-primary" id="vigenere_button">Encrypt</button>
                 <hr>
                 <div class="form-group">
-                    <label for="TextArea2">Cipher Text</label>
-                    <textarea class="form-control" id="TextArea2" rows="6"></textarea>
+                    <label for="vigenere_text_area_2" id="label_vigenere_text_area_2">Cipher Text</label>
+                    <textarea class="form-control" id="vigenere_text_area_2" rows="6" name="vigenere_text_area_2"></textarea>
                 </div>
             </form>
         </div>
