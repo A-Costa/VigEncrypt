@@ -1,0 +1,66 @@
+{% extends "base.html.jinja" %}
+
+{% block body %}
+<style>
+    @media(max-width:767px){
+    .info{
+        border-right: hidden !important;
+
+    }
+}
+.header {
+    padding-top: 20px;
+}
+</style>
+
+<div class="container">
+    <div class="row header">
+        <div class="col-12">
+            <h1>VigEncrypt</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 border-right info">
+            <p class="text-justify">a<a href=https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher>
+                    Vigenere Cipher</a> written using Flask </p> <p>
+                    <a class="github-button" href="https://github.com/A-Costa"
+                        data-size="large" aria-label="Follow @A-Costa on GitHub">Follow
+                        @A-Costa
+                    </a>
+            </p>
+            <p>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input type="radio" name="options" id="option1"
+                            autocomplete="off" checked>Encrypt
+                    </label>
+                    <label class="btn btn-secondary">
+                        <input type="radio" name="options" id="option2"
+                            autocomplete="off"> Decrypt
+                    </label>
+                </div>
+            </p>
+        </div>
+        <div class="col-md-8">
+            <form>
+                <div class="form-group">
+                    <label for="PlainTextarea">Plain Text</label>
+                    <textarea class="form-control" id="TextArea1" rows="6"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="KeyTextarea">Encryption Key</label>
+                    <input type="text" class="form-control" id="KeyTextarea">
+                </div>
+                <button type="button" class="btn btn-primary">Encrypt</button>
+                <hr>
+                <div class="form-group">
+                    <label for="PlainTextarea">Cipher Text</label>
+                    <textarea class="form-control" id="TextArea2" rows="6"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src={{ url_for('static', filename='js/home.js') }}></script>
+{% endblock %}
