@@ -12,7 +12,7 @@ function activate_decrypt() {
     button.innerHTML = "Decrypt"
 
     var label3 = document.querySelector(
-        'body > div > div:nth-child(2) > div.col-md-8 > form > div:nth-child(5) > label')
+        'body > div > div:nth-child(2) > div.col-md-8 > form > div:nth-child(6) > label')
     label3.innerHTML = "Plain Text"
 
     swap_text_area()
@@ -32,7 +32,7 @@ function activate_encrypt() {
     button.innerHTML = "Encrypt"
 
     var label3 = document.querySelector(
-        'body > div > div:nth-child(2) > div.col-md-8 > form > div:nth-child(5) > label')
+        'body > div > div:nth-child(2) > div.col-md-8 > form > div:nth-child(6) > label')
     label3.innerHTML = "Cipher Text"
 
     swap_text_area()
