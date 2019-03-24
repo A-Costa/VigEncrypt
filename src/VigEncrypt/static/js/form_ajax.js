@@ -6,7 +6,7 @@ function submitFormAjax() {
             //alert(response_data['test_key'])
             //alert(this.responseText); // Here is the response
             var text_area = document.querySelector('#vigenere_text_area_2');
-            text_area.value = response_data['test_key'];
+            text_area.value = response_data['result'];
         }
     }
 
@@ -15,7 +15,7 @@ function submitFormAjax() {
     var vigenere_key = document.querySelector('#vigenere_key').value
     var vigenere_key_method = document.querySelector('#vigenere_key_method input[name="vigenere_key_method"]:checked').value
 
-    req.open("POST", "/api/test", true);
+    req.open("POST", "/api/vigenere", true);
     req.setRequestHeader("Content-type","application/json");
     req.send(JSON.stringify({
                 function: vigenere_function,
