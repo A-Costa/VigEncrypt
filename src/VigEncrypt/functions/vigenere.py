@@ -35,12 +35,12 @@ def cipher(text, key, key_mode, decrypt=False):
         if key_mode == 'repeat':
             key_position = n % len(key)
             shifted_letter = shift_letter(letter, key[key_position], decrypt)
-            if shifted_letter != letter:
+            if (shifted_letter != letter) or key[key_position] == 'A':
                 n += 1
             result.append(shifted_letter)
         else:
             shifted_letter = shift_letter(letter, key[n], decrypt)
-            if shifted_letter != letter:
+            if (shifted_letter != letter) or key[n] == 'A':
                 n += 1
                 if not decrypt:
                     key += shifted_letter.capitalize()
