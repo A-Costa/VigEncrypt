@@ -1,4 +1,6 @@
 .vagrant
+.pytest_cache
+*.egg-info/
 .DS_Store
 ubuntu-bionic-18.04-cloudimg-console.log
 __pycache__
