@@ -25,9 +25,27 @@ def shift_letter(letter, key, reverse=False):
         return letter
 
 
-def encrypt(plaintext, key, key_mode):
-    pass
+def cipher(text, key, key_mode, decrypt=False):
+    if not ((key_mode == 'repeat') or (key_mode == 'autokey')):
+        raise ValueError('key_mode must be \'repeat\' or \'autokey\'')
 
+    result = []
+    n = 0
+    for letter in text:
+        if key_mode == 'repeat':
+            key_position = n % len(key)
+            shifted_letter = shift_letter(letter, key[key_position], decrypt)
+            if shifted_letter != letter:
+                n += 1
+            result.append(shifted_letter)
+        else:
+            shifted_letter = shift_letter(letter, key[n], decrypt)
+            if shifted_letter != letter:
+                n += 1
+                if not decrypt:
+                    key += shifted_letter.capitalize()
+                else:
+                    key += letter.capitalize()
+            result.append(shifted_letter)
 
-def decrypt(ciphertext, key, key_mode):
-    pass
+    return ''.join(result)
