@@ -7,10 +7,10 @@ function activate_decrypt() {
     var vigenere_button = document.querySelector('#vigenere_button')
     var vigenere_function = document.querySelector('#vigenere_function')
 
-    label_vigenere_text_area_1.innerHTML = "Cipher Text"
-    label_vigenere_text_area_2.innerHTML = "Plain Text"
+    label_vigenere_text_area_1.innerHTML = "<u>Cipher Text</u>"
+    label_vigenere_text_area_2.innerHTML = "<u>Plain Text</u>"
 
-    label_vigenere_key.innerHTML = "Decryption Key"
+    label_vigenere_key.innerHTML = "<u>Decryption Key</u>"
 
     vigenere_button.innerHTML = "Decrypt"
     vigenere_function.value = "decrypt"
@@ -28,10 +28,10 @@ function activate_encrypt() {
     var vigenere_button = document.querySelector('#vigenere_button')
     var vigenere_function = document.querySelector('#vigenere_function')
 
-    label_vigenere_text_area_1.innerHTML = "Plain Text"
-    label_vigenere_text_area_2.innerHTML = "Cipher Text"
+    label_vigenere_text_area_1.innerHTML = "<u>Plain Text</u>"
+    label_vigenere_text_area_2.innerHTML = "<u>Cipher Text</u>"
 
-    label_vigenere_key.innerHTML = "Encryption Key"
+    label_vigenere_key.innerHTML = "<u>Encryption Key</u>"
 
     vigenere_button.innerHTML = "Encrypt"
     vigenere_function.value = "encrypt"

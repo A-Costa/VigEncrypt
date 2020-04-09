@@ -12,7 +12,9 @@
             <div>
                 <p class="text-justify font-italic">online<a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher"
                         target="_blank">
-                        Vigenere Cipher</a> written using Flask
+                        Vigenere Cipher</a> written using <a href="https://flask.palletsprojects.com/en/1.1.x/"
+                        target="_blank">
+                        Flask</a>
                 </p>
                 <p>
                     <a class="github-button" href="https://github.com/A-Costa"
@@ -42,21 +44,21 @@
                 <input type="hidden" id="vigenere_function" name="function"
                     value="encrypt" />
                 <div class="form-group">
-                    <label for="vigenere_text_area_1" id="label_vigenere_text_area_1">Plain
-                        Text</label>
+                    <label for="vigenere_text_area_1" id="label_vigenere_text_area_1"><u>Plain
+                        Text</u></label>
                     <textarea class="form-control" id="vigenere_text_area_1"
                         rows="5" name="vigenere_text_area_1"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="vigenere_key" id="label_vigenere_key">Encryption
-                        Key</label>
+                    <label for="vigenere_key" id="label_vigenere_key"><u>Encryption
+                        Key</u></label>
                     <input type="text" class="form-control" id="vigenere_key"
                         name="vigenere_key" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <div class="row" id="vigenere_key_method">
                         <div class="col-4">
-                            <label>Key Method</label>
+                            <label><u>Key Method</u></label>
                         </div>
                         <div class="col-8">
                             <div class="form-check form-check-inline">
@@ -78,8 +80,8 @@
                     onclick="submitFormAjax()">Encrypt</button>
                 <hr>
                 <div class="form-group">
-                    <label for="vigenere_text_area_2" id="label_vigenere_text_area_2">Cipher
-                        Text</label>
+                    <label for="vigenere_text_area_2" id="label_vigenere_text_area_2"><u>Cipher
+                        Text</u></label>
                     <textarea class="form-control" id="vigenere_text_area_2"
                         rows="6" name="vigenere_text_area_2"></textarea>
                 </div>
